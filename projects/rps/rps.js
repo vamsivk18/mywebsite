@@ -1,3 +1,20 @@
+rockElem = document.querySelector('.js-rock');
+rockElem.addEventListener('click',()=>{evaluateMove('rock')});
+
+paperElem = document.querySelector('.js-paper');
+paperElem.addEventListener('click',()=>{evaluateMove('paper')});
+
+scissorElem = document.querySelector('.js-scissor');
+scissorElem.addEventListener('click',()=>{evaluateMove('scissor')});
+
+document.body.addEventListener('keydown',(event)=>{evaluateKey(event.key)});
+
+function evaluateKey(key){
+    if(key==='r') evaluateMove('rock');
+    else if(key==='p') evaluateMove('paper');
+    else if(key==='s') evaluateMove('scissor');
+}
+
 let stats = JSON.parse(localStorage.getItem('stats')) || {
     'wins':0,
     'loses':0,
