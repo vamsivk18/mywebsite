@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="Styles/12-rps.css">
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+    <div style="height: 120px;">
+        <button class="rps" onclick="evaluateMove('rock')">✊</button>
+        <button class="rps" onclick="evaluateMove('paper')">✋</button>
+        <button class="rps" onclick="evaluateMove('scissor')">✌️</button>
+    </div>
+    <p class="js-win"></p>
+    <p class="js-description"></p>
+    <p class="js-stats"></p>
+    <button onclick="reset()">Reset Score</button>
+    <button class="js-autoPlay" onclick="autoPlay()">Auto Play</button>
+    <script src="12-rps.js">
+        
+    </script>
+</body>
+</html>
