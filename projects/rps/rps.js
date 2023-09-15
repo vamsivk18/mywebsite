@@ -1,11 +1,16 @@
-rockElem = document.querySelector('.js-rock');
+let rockElem = document.querySelector('.js-rock');
 rockElem.addEventListener('click',()=>{evaluateMove('rock')});
 
-paperElem = document.querySelector('.js-paper');
+let paperElem = document.querySelector('.js-paper');
 paperElem.addEventListener('click',()=>{evaluateMove('paper')});
 
-scissorElem = document.querySelector('.js-scissor');
+let scissorElem = document.querySelector('.js-scissor');
 scissorElem.addEventListener('click',()=>{evaluateMove('scissor')});
+
+let autoPlayElem = document.querySelector('.js-autoPlay');
+autoPlayElem.addEventListener('click',()=>{
+    autoPlay();
+});
 
 document.body.addEventListener('keydown',(event)=>{evaluateKey(event.key)});
 
