@@ -8,9 +8,12 @@ let scissorElem = document.querySelector('.js-scissor');
 scissorElem.addEventListener('click',()=>{evaluateMove('scissor')});
 
 let autoPlayElem = document.querySelector('.js-autoPlay');
-autoPlayElem.addEventListener('click',()=>{
-    autoPlay();
-});
+autoPlayElem.addEventListener('click',()=>{autoPlay();});
+
+let resetScoreElem = document.querySelector('.js-reset');
+resetScoreElem.addEventListener('click',()=>{validateReset()});
+
+resetScoreElem.addEventListener('keydown',(event)=>{evaluateKey(event.key)});
 
 document.body.addEventListener('keydown',(event)=>{evaluateKey(event.key)});
 
@@ -18,6 +21,8 @@ function evaluateKey(key){
     if(key==='r') evaluateMove('rock');
     else if(key==='p') evaluateMove('paper');
     else if(key==='s') evaluateMove('scissor');
+    else if(key==='a') autoPlay();
+    else if(key==='\\') validateReset();
 }
 
 let stats = JSON.parse(localStorage.getItem('stats')) || {
@@ -46,12 +51,18 @@ function evaluateMove(human){
     document.querySelector('.js-description').innerHTML = description;
     document.querySelector('.js-stats').innerHTML = `Wins: ${stats.wins}, Losses: ${stats.loses}, Ties: ${stats.ties}`;
 }
-function reset(){
+function reset(flag){
+    document.querySelector('.js-reset-validate').innerHTML = '';
+    if(!flag) return;
     stats.wins = 0;
     stats.loses = 0;
     stats.ties = 0;
     localStorage.removeItem('stats');
     document.querySelector('.js-stats').innerHTML = `Wins: ${stats.wins}, Losses: ${stats.loses}, Ties: ${stats.ties}`;
+}
+
+function validateReset(){
+    document.querySelector('.js-reset-validate').innerHTML = `Are you sure you want to Reset the score? <button onclick='reset(true)'>Yes</button><button onclick='reset(false)'>No</button>`;
 }
 
 isAutoPlaying = false;
