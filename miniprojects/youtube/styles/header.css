@@ -2,10 +2,37 @@ button:hover{
     cursor: pointer;
 }
 .header{
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: 75px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-bottom: 1px solid rgb(199, 199, 199);
+}
+.sidebar{
+    padding: 20px 0;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 75px;
+    bottom: 0;
+    width: 86px;
+    border-right: 1px solid rgb(199, 199, 199);
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-buttons{
+    background-color: transparent;
+    border: none;
+    flex: 1;
+    font-size: 12px;
+}
+.sidebar-buttons:hover{
+    background-color: rgb(236, 235, 235);
 }
 .left-section{
     align-items: center;
@@ -13,9 +40,14 @@ button:hover{
     align-items: center;
 }
 .hamburger-image{
-    height: 30px;
+    width: 30px;
     margin-left: 28px;
     margin-right: 28px;
+}
+.sidebar-img{
+    width: 30px;
+    /* margin-left: 28px;
+    margin-right: 28px; */
 }
 .youtube-image{
     height: 26px;

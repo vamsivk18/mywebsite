@@ -1,5 +1,7 @@
 body{
     margin: 0;
+    padding-top: 100px;
+    padding-left: 100px;
 }
 .thumbnail{
     width: 100%;
