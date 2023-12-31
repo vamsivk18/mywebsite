@@ -42,7 +42,7 @@
                 body: JSON.stringify({"id":id,"completed":completed})
             }
             try{
-                let response = await fetch("http://localhost:3000/update",request_options)
+                let response = await fetch("http://10.0.0.31:3000/update",request_options)
                 let data = await response.json()
                 // console.log(data)
                 if(data.error){
@@ -87,7 +87,7 @@
         }
 
         async function load_todos(){
-            let todo_response = await fetch("http://localhost:3000/todos")
+            let todo_response = await fetch("http://10.0.0.31:3000/todos")
             let todo_json = await todo_response.json()
             let todos = todo_json.todos
             console.log(todos)
@@ -113,7 +113,7 @@
                 body: JSON.stringify(todo_json)
             }
             try{
-                let response = await fetch("http://localhost:3000/create",request_options)
+                let response = await fetch("http://10.0.0.31:3000/create",request_options)
                 let data = await response.json()
                 console.log(data)
                 if(data.error){
@@ -133,7 +133,7 @@
                 body: JSON.stringify({"id":id})
             }
             try{
-                let response = await fetch("http://localhost:3000/delete",request_options)
+                let response = await fetch("http://10.0.0.31:3000/delete",request_options)
                 let data = await response.json()
                 // console.log(data)
                 if(data.error){
